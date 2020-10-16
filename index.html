@@ -90,9 +90,12 @@
         })
 
         function getDataPokemon(pokemon_url){
+
           $.ajax(pokemon_url).done(function(data_result){
-            console.log(data_result)
-            
+            $("#pokemon-types").html("")
+            $("#pokemon-abilities").html("")
+            $("#pokemon-moves").html("")
+
             data_result.types.forEach(function(result){
               $("#pokemon-types").append("<li>"+result.type.name+"</li>") 
             }) 
